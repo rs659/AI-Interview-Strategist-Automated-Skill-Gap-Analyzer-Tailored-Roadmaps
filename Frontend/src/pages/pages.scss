@@ -1,0 +1,393 @@
+$bg-page: transparent;
+$bg-card: rgba(22, 27, 38, 0.75);
+$bg-input: rgba(30, 37, 53, 0.85);
+$border-color: rgba(255, 255, 255, 0.1);
+$text-primary: #e6edf3;
+$text-muted: #8b949e;
+$accent: #ff2d78;
+$accent-hover: #e01f66;
+$font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+.highlight {
+    color: $accent;
+}
+
+// ── Landing Page ─────────────────────────────────────────────────────────────
+.landing-page {
+    min-height: calc(100vh - 70px);
+    background-color: $bg-page;
+    color: $text-primary;
+    font-family: $font-stack;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+}
+
+.hero {
+    max-width: 840px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    &__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 1rem;
+        background: rgba(255, 45, 120, 0.1);
+        border: 1px solid rgba(255, 45, 120, 0.3);
+        border-radius: 999px;
+        color: #ff6b9d;
+        font-size: 0.85rem;
+        font-weight: 600;
+
+        &-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $accent;
+            box-shadow: 0 0 8px $accent;
+        }
+    }
+
+    &__title {
+        font-size: clamp(2.25rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+    }
+
+    &__subtitle {
+        font-size: 1.1rem;
+        color: $text-muted;
+        max-width: 680px;
+        line-height: 1.7;
+
+        strong {
+            color: $text-primary;
+        }
+    }
+
+    &__cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    &__stats {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        padding: 1.5rem 2.5rem;
+        background-color: $bg-card;
+        border: 1px solid $border-color;
+        border-radius: 1rem;
+
+        .stat-item {
+            h3 {
+                font-size: 1.75rem;
+                font-weight: 700;
+                color: $accent;
+            }
+            p {
+                font-size: 0.85rem;
+                color: $text-muted;
+                margin-top: 0.2rem;
+            }
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 36px;
+            background-color: $border-color;
+        }
+    }
+}
+
+.btn-hero {
+    text-decoration: none;
+    padding: 0.85rem 1.75rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &--primary {
+        background-color: $accent;
+        color: #fff;
+        box-shadow: 0 4px 18px rgba(255, 45, 120, 0.35);
+
+        &:hover {
+            background-color: $accent-hover;
+            transform: translateY(-2px);
+        }
+    }
+
+    &--secondary {
+        background-color: $bg-card;
+        color: $text-primary;
+        border: 1px solid $border-color;
+
+        &:hover {
+            border-color: $accent;
+            color: $accent;
+        }
+    }
+}
+
+.features-section {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+
+    .section-heading {
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            color: $text-muted;
+            font-size: 1rem;
+        }
+    }
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background-color: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 45, 120, 0.5);
+    }
+
+    &__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 0.75rem;
+        background: rgba(255, 45, 120, 0.12);
+        color: $accent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    p {
+        color: $text-muted;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+// ── About & Contact Pages ────────────────────────────────────────────────────
+.info-page {
+    min-height: calc(100vh - 70px);
+    background-color: $bg-page;
+    color: $text-primary;
+    font-family: $font-stack;
+    padding: 4rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.info-container {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .page-tag {
+        align-self: flex-start;
+        padding: 0.35rem 0.85rem;
+        background: rgba(255, 45, 120, 0.12);
+        color: #ff6b9d;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4vw, 2.75rem);
+        font-weight: 800;
+    }
+
+    .lead-text {
+        color: $text-muted;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 720px;
+    }
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+
+    .about-card {
+        background-color: $bg-card;
+        border: 1px solid $border-color;
+        border-radius: 1rem;
+        padding: 1.75rem;
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: $accent;
+        }
+
+        p {
+            color: $text-muted;
+            line-height: 1.65;
+            font-size: 0.95rem;
+        }
+    }
+}
+
+.cta-banner {
+    margin-top: 2rem;
+    background: linear-gradient(135deg, rgba(255, 45, 120, 0.14), rgba(22, 27, 34, 0.9));
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    padding: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    h2 {
+        font-size: 1.4rem;
+    }
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    margin-top: 1rem;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-details {
+    background-color: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: fit-content;
+
+    .contact-item {
+        h4 {
+            color: $accent;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        p {
+            color: $text-primary;
+            font-size: 0.95rem;
+        }
+    }
+}
+
+.contact-form {
+    background-color: $bg-card;
+    border: 1px solid $border-color;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .contact-success {
+        padding: 0.85rem 1rem;
+        background: rgba(46, 160, 67, 0.15);
+        border: 1px solid rgba(46, 160, 67, 0.4);
+        color: #7ee787;
+        border-radius: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .contact-error {
+        padding: 0.85rem 1rem;
+        background: rgba(255, 77, 77, 0.15);
+        border: 1px solid rgba(255, 77, 77, 0.4);
+        color: #ff8080;
+        border-radius: 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: $text-primary;
+        }
+
+        input,
+        textarea {
+            background-color: $bg-input;
+            border: 1px solid $border-color;
+            border-radius: 0.65rem;
+            padding: 0.75rem 1rem;
+            color: $text-primary;
+            font-size: 0.95rem;
+            outline: none;
+            font-family: inherit;
+
+            &:focus {
+                border-color: $accent;
+            }
+        }
+    }
+}
