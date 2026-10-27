@@ -121,22 +121,4 @@
     ├── index.html
     ├── vite.config.js
     └── package.json
-```
-Environment Variables
 
-Create a .env file in the Backend/ directory with the following variables:
-
-PORT=3000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret_key
-GOOGLE_GENAI_API_KEY=your_gemini_api_key
-# Nodemailer / Contact Email configuration
-EMAIL_USER=your_email@gmail.com
-EMAIL_PASS=your_16_digit_google_app_password
-CONTACT_RECEIVER_EMAIL=your_email@gmail.com
-
-🔒 Security Best Practices Implemented
-No Plaintext Passwords: Uses bcryptjs with salt rounds for one-way password hashing.
-Strict Email Provider Allowlist: Blocks disposable or fake domains; only permits valid Google, Yahoo, and Outlook accounts.
-Stateful JWT Logout Invalidation: Logged-out tokens are stored in MongoDB with TTL indexing to prevent replay attacks during the validity window.
-Sanitized AI Prompts & Native Type Schemas: Leverages Gemini’s strict JSON output schemas to prevent prompt injection and guarantee valid, parseable structures.
